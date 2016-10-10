@@ -106,6 +106,5 @@ int main() {
     free(gpu_out);
     free(sequences);
 
-
     return 0;
 }
