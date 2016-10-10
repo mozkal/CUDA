@@ -152,7 +152,6 @@ void makePicture(int *Mandel,int width, int height, int MAX){
     fclose(f);
 }
 
-
 void makePictureInt(int *Mandel,int width, int height, int MAX){
     double scale = 255.0 / MAX;
     int red_value, green_value, blue_value;
