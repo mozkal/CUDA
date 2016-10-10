@@ -94,7 +94,6 @@ int* calculate_gpu(const std::vector<Fragment> &seq, char* sequences) {
 }
 
 
-
 int main() {
     std::vector<Fragment> seq = prepare_set();
     char* sequences = prepare_seq(seq);
