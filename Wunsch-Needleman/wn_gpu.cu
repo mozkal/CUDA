@@ -7,7 +7,7 @@
 
 /* Pretwarzamy macierz wiersz po wierszu. Dla ostatnich 128 sekwencji doklejamy
  * wcześniejsze, tak żeby w każdym bloku wszystkie 128 wątków pracowało */
-__global__ void needlman(char* seq, int* d_out, int count, long size) {
+__global__ void needleman(char* seq, int* d_out, int count, long size) {
     int prev_row[SINGLE_SEQ_LENGTH];
     int current, prev;
     int max = 0;
@@ -80,7 +80,7 @@ int* calculate_gpu(const std::vector<Fragment> &seq, char* sequences) {
     long size = seq.size();
     do {
         long grid_size = std::min((long) MAX_BLOCKS, size);
-        needlman<<<grid_size, 128, SINGLE_SEQ_LENGTH>>>(d_seq, d_out, count, seq.size());
+        needleman<<<grid_size, 128, SINGLE_SEQ_LENGTH>>>(d_seq, d_out, count, seq.size());
         cudaDeviceSynchronize();
         count++;
         size -= grid_size;
