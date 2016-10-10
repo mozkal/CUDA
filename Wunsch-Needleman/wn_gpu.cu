@@ -24,7 +24,6 @@ __global__ void needleman(char* seq, int* d_out, int count, long size) {
     if(threadIdx.x < SINGLE_SEQ_LENGTH)
         seq1[threadIdx.x] = seq[block * SINGLE_SEQ_LENGTH + threadIdx.x];
         
-
     char seq2[SINGLE_SEQ_LENGTH];
 
     for(int i = 0; i < SINGLE_SEQ_LENGTH; i++)
