@@ -75,7 +75,7 @@ std::string cut(const std::string s) {
     return sort(grams);
 }
 
-//zwraca najlepsze przyrównanie
+//Zwraca najlepsze przyrównanie
 int needleman_wunsch(const char* seq1, const char* seq2) {
     int i, j, current, prev, max = 0;
     int* prev_row = (int*) malloc(SINGLE_SEQ_LENGTH * sizeof(int));
