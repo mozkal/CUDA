@@ -56,7 +56,6 @@ int main(int argc, char **argv) {
     int *Iters;
     Iters = (int*) malloc(sizeof(int) * POZ * PION);
 
-
     //Do computations
     time_t start, end;
 
